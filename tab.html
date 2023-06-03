@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Final-tab</title>
+ </head>
+ <body>
+  <!-- tabs -->
+  <div class="container p-4">
+   <div class=" bg-white count p-2">
+    <div class="head" style="height:10%">
+     <h4>BUILD YOUR PROFILE</h4>
+    </div>
+    <div class="fulltab" style="height:75%">
+     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item " role="presentation" style="width:33.33%">
+       <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">About</button>
+      </li>
+      <li class="nav-item " role="presentation" style="width:33.33%">
+       <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Contact</button>
+      </li>
+      <li class="nav-item" role="presentation" style="width:33.33%">
+       <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Address</button>
+      </li>
+     </ul>
+     <div class="tab-content" id="pills-tabContent">
+      <!-- 1st page -->
+      <div class="tab-pane fade show active tab" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+       <div class="active">
+        <div class="row">
+         <div class="col-3 p-4">
+          <div class="pic p-1">
+           <img src="images.jpeg" alt="picture">
+          </div>
+          <div class="text ">
+           <p>Choose Picture</p>
+          </div>
+         </div>
+         <div class="col-9">
+          <form onclick="return validateForm()">
+           <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" id="user" value="" placeholder="User Name" aria-label="Username" aria-describedby="basic-addon1" class=" invalid">
+           </div>
+           <span id="Message" style="color:red;margin: 5px 0px;"></span>
+           <div class="input-group flex-nowrap pt-2">
+            <input type="text" class="form-control" placeholder="Last Name" name="lname" aria-label="LastName" id="last" value="" aria-describedby="addon-wrapping" class=" invalid">
+           </div>
+           <span id="Message2" style="color:red;margin: 5px 0px;"></span>
+           <div class="mb-3 pt-2">
+            <input type="email" class="form-control" placeholder="enter Email" id="exampleInputEmail1" aria-describedby="emailHelp" class=" invalid">
+           </div>
+           <span id="Message3" style="color:red;margin: 5px 0px;"></span>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+      <!-- 2nd page -->
+      <div class="tab-pane fade tab " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+       <form  onclick="return validate()">
+        <input id="user3" type="tel" class="form-control" id="phone" name="phone" class=" invalid" placeholder="Add contact number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+        <span id="Message4" style="color:red;margin: 5px 0px;"> </span>
+
+       </form>
+      </div>
+     </div>
+
+
+
+     <!-- 3rd page  -->
+     <div class="tab-pane fade tab" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <form onclick="return fun()"">
+       <div class="row p-2">
+        <div class="col">
+         <input type="text" class="form-control" placeholder="Street name" id="street" aria-label="street name" value="" class=" value invalid">
+        </div>
+        <span id="Message5" style="color:red;margin: 5px 0px;"></span>
+        <div class="col">
+         <input type="number" class="form-control" placeholder="Street number" id="number" value="" aria-label="Street number" class=" invalid">
+        </div>
+        <span id="Message6" style="color:red;margin: 5px 0px;"></span>
+       </div>
+       <div class="row p-2">
+        <div class="col">
+         <input type="text" class="form-control" placeholder="City" id="city" value="" aria-label="City" class=" invalid">
+        </div>
+        <span id="Message7" style="color:red;margin: 5px 0px;"></span>
+        <div class="col">
+         <select id="inputCountry" id="user" class="form-select" class=" invalid">
+          <option selected>Country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>Russia</option>
+          <option>Japan</option>
+         </select>
+        </div>
+      </form>
+     </div>
+    </div>
+    <div style="overflow:auto;">
+     <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+     </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+     <span class="step"></span>
+     <span class="step"></span>
+     <span class="step"></span>
+    </div>
+   </div>
+  </div>
+  </div>
+ </body>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script src="index.js"></script>
+</html>
